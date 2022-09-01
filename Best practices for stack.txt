@@ -1,0 +1,19 @@
+TIPS AND TRICKS
+* Make use of C++ templates to get your code working for any datatypes or user-defined datatypes. Use the template for each and every function in the template class.
+* Don’t forget to add the header guards in the “.h” files for good coding practices and to avoid errors if you defined the file more than once.
+* Pass the parameters (complex type) with const and reference to the function if they are not Plain Old Data and the function does not modify or change the value of parameters.
+* Allocate memory using malloc instead of new because malloc just allocates the memory (it gives you a memory block) and doesn’t call the constructor.
+  Moreover, it is expensive to manage the dynamic memory so to minimize this disadvantage use malloc().
+* Malloc comes untyped so do not forget to add the type in front of it.
+* If you are using malloc then do not forget to use free instead of delete. Do not just free the pointer. Make sure that you have deleted all the items in it before using free.
+* Use try and catch whenever you are calling copy constructor to make sure you have copied all items correctly. Use temporary memory to store the copy of items.
+  Do not change the original memory items until you copy all items correctly without any errors. 
+  Because if you make changes directly to the original memory and caught errors it is impossible to recover the original memory.
+* If in case copy construction fails at some point please make sure that you have deleted everything you have copied in the temporary variable/memory using destructor and free.
+  Don’t forget to add throw in the catch block to catch the exception.
+* Keep your eye on the current size every time. If you are unable to add the item then do decrement the current size.
+* Check the loops where we are deleting the items. Because, if the loops run even a single extra time it will destruct a random thing.
+* In this assignment I have learned a lot of interesting things and how the code works under the hood.
+  Such as the working of malloc, free, destructor, and how to provide the strong exception guarantee using try and catch.
+  I have learned how to avoid memory leaks by deleting the items after the use. 
+
